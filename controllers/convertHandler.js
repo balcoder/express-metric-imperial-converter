@@ -1,14 +1,17 @@
 function ConvertHandler() {
+  // ([1-9][0-9]*\.*)(gal|l|mi|km)$
+  // (\d+[\/\d. ]|\d) //match decimal or fraction
 
   this.getNum = function(input) {
-    // replace all digits and . with nothing and return
-    var result = input.replace(/[^\d.-]/g, '');
+    // replace all non digits and . with nothing and return
+    //var result = input.replace(/[^\d.-]/g, '');
+    var result = input.match(/(\d+[\/\d. ]|\d)g, '');
     return result;
   };
 
   this.getUnit = function(input) {
-    var result;
-
+    var re = /(gal|l|mi|km|lbs|kg|GAL|L|MI|KM|LBS|KG)$/g;
+    var result = input.match(re);
     return result;
   };
 

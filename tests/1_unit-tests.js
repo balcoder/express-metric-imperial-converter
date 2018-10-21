@@ -15,8 +15,9 @@ suite('Unit Tests', function(){
     });
 
     test('Decimal Input', function(done) {
-
-      //done();
+      var  input = '32.45';
+      assert.equal(convertHandler.getNum(input), 32.45)
+      done();
     });
 
     test('Fractional Input', function(done) {
@@ -90,28 +91,39 @@ suite('Unit Tests', function(){
     });
 
     test('L to Gal', function(done) {
-
+      var input = [5, 'L'];
+      var expected = 1.3209;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
       //done();
     });
 
     test('Mi to Km', function(done) {
-
-      //done();
+      var input = [5, 'Mi'];
+      var expected = 8.0467;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
 
     test('Km to Mi', function(done) {
-
-      //done();
+      var input = [5, 'Km'];
+      var expected = 3.1069;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
 
     test('Lbs to Kg', function(done) {
-
-      //done();
+      var input = [5, 'Lbs'];
+      var expected = 2.2680;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
 
     test('Kg to Lbs', function(done) {
-
-      //done();
+      var input = [5, 'Kg'];
+      var expected = 11.0231;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
 
   });
