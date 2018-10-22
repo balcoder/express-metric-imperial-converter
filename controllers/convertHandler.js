@@ -16,8 +16,9 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function(initUnit) {
-    var result;
-
+    var input = ['gal','l','mi','km','lbs','kg'];
+    var expect = ['l','gal','km','mi','kg','lbs'];
+    var result = expect[input.indexOf(initUnit)]
     return result;
   };
 
